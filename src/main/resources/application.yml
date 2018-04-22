@@ -1,0 +1,11 @@
+spring:
+  couchbase:
+    bootstrap-hosts: localhost
+    bucket:
+      name: blog
+      password: password
+  security:
+    user:
+      name: admin
+      password: password
+      roles: ADMIN

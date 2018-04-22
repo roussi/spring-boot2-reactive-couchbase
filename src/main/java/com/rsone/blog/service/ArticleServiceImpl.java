@@ -5,6 +5,7 @@ import com.rsone.blog.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 /**
  * @author Abdelghani Roussi
@@ -28,5 +29,10 @@ public class ArticleServiceImpl implements ArticleService{
     @Override
     public Flux<Article> findAllArticlesByTopicsName(String topicsName){
         return Flux.empty();
+    }
+
+    @Override
+    public Mono<Article> createArticle(Article article) {
+         return articleRepository.save(article);
     }
 }
